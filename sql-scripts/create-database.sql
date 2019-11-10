@@ -1,5 +1,37 @@
 -- Remove "--" if database spotper doesn't exist
 -- CREATE DATABASE spotper;
+CREATE DATABASE spotper;
+-- ON PRIMARY(
+--     NAME='spotper',
+--     FILENAME='/spotper/spotper.mdf',
+--     SIZE=5120KB,
+--     FILEGROWTH=1024KB
+-- ),
+-- FILEGROUP spotper_fg01 (
+--     NAME='spotper_01',
+--     FILENAME='/spotper/spotper_01.ndf',
+--     SIZE=2048KB,
+--     FILEGROWTH=30%
+-- ),
+-- (
+--     NAME='spotper_02',
+--     FILENAME='/spotper/spotper_02.ndf',
+--     SIZE=2048KB,
+--     FILEGROWTH=20%
+-- ),
+-- FILEGROUP spotper_fg02 (
+--     NAME='spotper_03',
+--     FILENAME='/spotper/spotper_03.ndf',
+--     SIZE=4096KB,
+--     MAXSIZE=8192KB,
+--     FILEGROWTH=15%
+-- )
+-- LOG ON (
+--     NAME='spotper_log',
+--     FILENAME='/spotper/spotper_log.ldf',
+--     SIZE=1024KB,
+--     FILEGROWTH=10%
+-- );
 
 -- Remove "--" if database spotper has not been selected
 -- USE spotper;
@@ -44,11 +76,13 @@ CREATE TABLE album (
     codalbum INT,
     descricao VARCHAR(200),
     dtgravacao DATETIME,
-    dtcompra DATETIME CHECK (dtcompra >= '2000-01-01'),
+    dtcompra DATETIME,
     tipocompra VARCHAR(50),
     prcompra DEC(11, 2),
 
     codgravadora INT,
+
+    CONSTRAINT chk_dtcompra CHECK (dtcompra >= '2000-01-01'),
 
     CONSTRAINT pk_codalbum PRIMARY KEY(codalbum),
     CONSTRAINT fk_codgravadora FOREIGN KEY(codgravadora) 
@@ -66,12 +100,14 @@ CREATE TABLE faixa (
     codfaixa INT,
     descricao VARCHAR(200),
     numfaixa INT,
-    tipogravacao VARCHAR(5) CHECK (tipogravacao = 'ADD' or tipogravacao = 'DDD'),
+    tipogravacao VARCHAR(5),
     -- tempoexecucao in minute
     tempo DEC(8, 2),
 
     codalbum INT,
     codtipocomposicao INT,
+
+    CONSTRAINT chk_tipogravacao CHECK (tipogravacao = 'ADD' or tipogravacao = 'DDD'),
 
     CONSTRAINT pk_codfaixa PRIMARY KEY(codfaixa),
     CONSTRAINT fk_codalbum FOREIGN KEY(codalbum)
@@ -82,7 +118,8 @@ CREATE TABLE faixa (
 
 CREATE TABLE periodoMusical (
     codperiodomusical INT,
-    descricao VARCHAR(200),
+    nome VARCHAR(30) NOT NULL,
+    descricao VARCHAR(600),
     dtinicio DATE,
     dtfim DATE,
 
