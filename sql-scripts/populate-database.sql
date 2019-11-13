@@ -138,7 +138,7 @@ INSERT INTO album(codalbum, descricao, dtgravacao, dtcompra, tipocompra, prcompr
     'Mozart: Violin Concert',
     '1950-4-22',
     '2006-5-1',
-    'CD',
+    'física',
     '150.00',
     0
 )
@@ -148,7 +148,7 @@ INSERT INTO album VALUES (
     'Mozart: Complete Piano Sonata, Vol. 2',
     '1990-12-1',
     '2012-7-15',
-    'Download',
+    'download',
     '50.00',
     0
 )
@@ -158,7 +158,7 @@ INSERT INTO album VALUES (
     'Relaxing Mozart',
     '1970-2-1',
     '2001-1-1',
-    'Vinil',
+    'física',
     '325.00',
     0
 )
@@ -170,7 +170,7 @@ INSERT INTO album VALUES (
     'Beethoven: Sonatas Nos. 1-6',
     '1978-9-19',
     '2003-6-3',
-    'CD',
+    'física',
     '325.00',
     0
 )
@@ -180,7 +180,7 @@ INSERT INTO album VALUES (
     'Relaxing with Beethoven',
     '1988-10-23',
     '2017-6-4',
-    'Vinil',
+    'física',
     '283.99',
     1
 )
@@ -192,7 +192,7 @@ INSERT INTO album VALUES (
     'Bach: Partitas for Keyboard',
     '1958-5-23',
     '2013-6-12',
-    'Vinil',
+    'física',
     '283.99',
     1
 )
@@ -202,7 +202,7 @@ INSERT INTO album VALUES (
     'Paul Tortelier Plays Bach',
     '1998-10-23',
     '2015-3-23',
-    'CD',
+    'física',
     '75.00',
     1
 )
@@ -214,7 +214,7 @@ INSERT INTO album VALUES (
     'Tchaikovski: Greatest music',
     '2002-11-3',
     '2013-4-5',
-    'Download',
+    'download',
     '42.00',
     0
 )
