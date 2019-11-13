@@ -14,19 +14,16 @@ def getMusicNames(html):
 def getMusicDuration(html):
     musics_time = html.select('.tracklist-duration span')
 
-    time_str = [time.string for time in musics_time]
-    secs = [ float(time.split(':')[1]) for time in time_str ]
-    secs = [ float('%.2f' % (sec/60)) for sec in secs ]
-    mins = [ float(time.split(':')[0]) for time in time_str ]
+    time_str = [ f'00:{time.string}' for time in musics_time]
 
-    return [ min + secs[ind] for (ind, min) in enumerate(mins) ]
+    return time_str
 
-def saveValues(filename, musics, times, start_id = 0):
+def saveValues(filename, musics, times, cod_album, start_id = 0):
     sql = open(filename, 'w')
 
     id = start_id
     for (i, music) in enumerate(musics):
-        query = f'INSERT INTO faixa VALUES({id}, {music}, {i}, __, {times[i]}, __, __)\n'
+        query = f'INSERT INTO faixa VALUES(\n\t{id},\n\t\'{music}\',\n\t{i},\n\t\'DDD\',\n\t{times[i]},\n\t{cod_album},\n\t__\n)\n\n'
 
         sql.write(query)
         id += 1

@@ -10,10 +10,10 @@ Esse é um script criado por nós para facilitar a inserção de músicas de um 
 $ pip3 innstall beautifulsoup4
 ```
 
-Depois, basta executar o arquivo `main.py` da seguinte forma:
+Depois, entre na pasta `scraping-music` e execute o arquivo `scrap.sh` da seguinte forma:
 
 ```shellscript
-$ python3 main.py html-file start-id
+$ ./scrap.sh [clean|create|ls] <html-file> <start-id> <cod-album>
 ```
 
 html-file é um arquivo criado com apenas a lista ordenada de músicas.
