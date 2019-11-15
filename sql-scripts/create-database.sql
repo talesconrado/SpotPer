@@ -34,6 +34,7 @@ CREATE DATABASE spotper
      SIZE=1024KB,
      FILEGROWTH=10%
  )
+GO
 --Remove "--" if database spotper has not been selected
 USE spotper;
 
@@ -84,7 +85,7 @@ CREATE TABLE album (
     codgravadora INT NOT NULL,
 
     CONSTRAINT chk_dtcompra CHECK (dtcompra >= '2000-01-01'),
-    CONSTRAINT chk_tipocompra CHECK (tipocompra = 'fisica' or tipocompra = 'download'),
+    CONSTRAINT chk_tipocompra CHECK (tipocompra = 'física' or tipocompra = 'download'),
 
     CONSTRAINT pk_codalbum PRIMARY KEY(codalbum),
     CONSTRAINT fk_codgravadora FOREIGN KEY(codgravadora) 
@@ -192,3 +193,52 @@ CREATE TABLE compostaPor (
     CONSTRAINT fk_codfaixacompositor FOREIGN KEY(codfaixacompositor)
         REFERENCES faixa(codfaixa) ON UPDATE CASCADE ON DELETE CASCADE
 ) ON spotper_fg01;
+GO
+
+-- Here are only the triggers, so we've put this "GO" before those statements
+
+CREATE TRIGGER faixa_TR_tamanhoalbum ON faixa
+AFTER INSERT, UPDATE
+AS
+IF EXISTS (
+           SELECT f.codalbum FROM faixa f, inserted i 
+           WHERE i.codalbum = f.codalbum 
+           GROUP BY f.codalbum 
+           HAVING COUNT(f.codalbum) > 64
+          )
+BEGIN
+ROLLBACK TRANSACTION;
+RETURN 
+END;
+GO
+
+CREATE TRIGGER album_TR_prcompra ON album
+AFTER INSERT, UPDATE
+AS
+IF EXISTS (
+           SELECT i.prcompra FROM inserted i 
+           GROUP BY i.prcompra
+           HAVING i.prcompra > 3 * (SELECT AVG(a.prcompra) FROM album a, faixa f WHERE f.codalbum = a.codalbum
+                                    AND (f.tipogravacao NOT IN ('ADD')))
+          )
+BEGIN
+ROLLBACK TRANSACTION;
+RETURN 
+END;
+GO
+
+CREATE TRIGGER faixa_TR_barrocoDDD ON compostaPor
+AFTER INSERT, UPDATE
+AS
+IF EXISTS (
+           SELECT i.codfaixacompositor FROM inserted i, faixa f, periodoMusical p, compositor c
+           WHERE i.codcompositor = c.codcompositor
+           AND c.codperiodomusical = p.codperiodomusical AND i.codfaixacompositor = f.codfaixa 
+           AND f.tipogravacao = 'ADD'
+           AND p.codperiodomusical = 0
+          )
+BEGIN
+ROLLBACK TRANSACTION;
+RETURN 
+END;
+GO
