@@ -7,9 +7,9 @@ DEFAULT='\033[0m'
 YELLOW='\033[1;33m'
 GRAY='\033[1;30m'
 
-if [ ! -d "../sql-scripts/scrapping" ]
+if [ ! -d "sql-scripts/scrapping" ]
 then
-	mkdir ../sql-scripts/scrapping
+	mkdir /sql-scripts/scrapping
 fi
 
 
@@ -23,19 +23,19 @@ fi
 
 if [ "$OP" != "clean" ] && [ "$OP" != "create" ] && [ "$OP" != "ls" ]
 then
-	echo -e "/scrap.sh ${RED}[clean | create | ls]${DEFAULT}"
+	echo -e "./scrap.sh ${RED}[clean | create | ls]${DEFAULT}"
 	exit
 fi
 
 if [ "$OP" = "CLEAN" ]
 then
-	if [ -f "../sql-scripts/scrapping/*.sql" ]
+	if [ -f "/sql-scripts/scrapping/*.sql" ]
 	then
-		rm ../sql-scripts/scrapping
+		rm /sql-scripts/scrapping
 	fi
 elif [ "$OP" = "LS" ]
 then
-	ls ../sql-scripts/scrapping
+	ls /sql-scripts/scrapping
 	exit
 fi
 
@@ -64,8 +64,8 @@ then
 	exit
 fi
 
-python3 main.py $FILENAME $START_ID $COD_ALBUM
-mv *.sql ../sql-scripts/scrapping
+python3 ./scrap/main.py $FILENAME $START_ID $COD_ALBUM
+mv ./scrap/*.sql /sql-scripts/scrapping
 echo -e "${GREEN}Queries Geradas!${DEFAULT}"
 
 exit
