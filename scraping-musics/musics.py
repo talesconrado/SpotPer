@@ -23,7 +23,7 @@ def saveValues(filename, musics, times, cod_album, start_id = 0):
 
     id = start_id
     for (i, music) in enumerate(musics):
-        query = f'INSERT INTO faixa VALUES(\n\t{id},\n\t\'{music}\',\n\t{i},\n\t\'DDD\',\n\t{times[i]},\n\t{cod_album},\n\t__\n)\n\n'
+        query = f'INSERT INTO faixa VALUES(\n\t{id},\n\t\'{music}\',\n\t{i+1},\n\t\'DDD\',\n\t\'{times[i]}\',\n\t{cod_album},\n\t__\n)\n\n'
 
         sql.write(query)
         id += 1

@@ -1,34 +1,36 @@
+-- Remove "--" if you want delete spotper database
+DROP DATABASE spotper;
+
 -- Remove "--" if database spotper doesn't exist
--- CREATE DATABASE spotper;
 CREATE DATABASE spotper
  ON PRIMARY(
      NAME='spotper',
-     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper.mdf',
+     FILENAME='/home/phillipe/FBD/spotper/spotper.mdf',
      SIZE=5120KB,
      FILEGROWTH=1024KB
  ),
  FILEGROUP spotper_fg01 (
      NAME='spotper_01',
-     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_01.ndf',
+     FILENAME='/home/phillipe/FBD/spotper/spotper_01.ndf',
      SIZE=2048KB,
      FILEGROWTH=30%
  ),
  (
      NAME='spotper_02',
-     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_02.ndf',
+     FILENAME='/home/phillipe/FBD/spotper/spotper_02.ndf',
      SIZE=2048KB,
      FILEGROWTH=20%
  ),
  FILEGROUP spotper_fg02 (
      NAME='spotper_03',
-     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_03.ndf',
+     FILENAME='/home/phillipe/FBD/spotper/spotper_03.ndf',
      SIZE=4096KB,
      MAXSIZE=8192KB,
      FILEGROWTH=15%
  )
  LOG ON (
      NAME='spotper_log',
-     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_log.ldf',
+     FILENAME='/home/phillipe/FBD/spotper/spotper_log.ldf',
      SIZE=1024KB,
      FILEGROWTH=10%
  )
@@ -36,19 +38,19 @@ CREATE DATABASE spotper
 USE spotper;
 
 CREATE TABLE endereco (
-    numero INT,
-    cep INT,
-    pais VARCHAR(50),
-    estado VARCHAR(50),
-    cidade VARCHAR(50),
-    rua VARCHAR(150),
+    numero INT NOT NULL,
+    cep INT NOT NULL,
+    pais VARCHAR(50) NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    cidade VARCHAR(50) NOT NULL,
+    rua VARCHAR(150) NOT NULL,
 
     CONSTRAINT pk_codendereco PRIMARY KEY (numero, cep)
 ) ON spotper_fg01;
 
 CREATE TABLE gravadora (
-    codgravadora INT,
-    nome VARCHAR(200),
+    codgravadora INT NOT NULL,
+    nome VARCHAR(200) NOT NULL,
     homepage VARCHAR(300),
 
     numero INT,
@@ -60,11 +62,11 @@ CREATE TABLE gravadora (
 ) ON spotper_fg01;
 
 CREATE TABLE telefone (
-    num INT,
-    ddd INT,
+    num INT NOT NULL,
+    ddd INT NOT NULL,
     ddi INT,
 
-    codgravadora INT,
+    codgravadora INT NOT NULL,
 
     CONSTRAINT pk_codtelefone PRIMARY KEY(ddd, num),
     CONSTRAINT fk_telgravadora FOREIGN KEY(codgravadora)
@@ -72,14 +74,14 @@ CREATE TABLE telefone (
 ) ON spotper_fg01;
 
 CREATE TABLE album (
-    codalbum INT,
-    descricao VARCHAR(200),
-    dtgravacao DATETIME,
-    dtcompra DATETIME,
+    codalbum INT NOT NULL,
+    descricao VARCHAR(200) NOT NULL UNIQUE,
+    dtgravacao DATETIME NOT NULL,
+    dtcompra DATETIME NOT NULL,
     tipocompra VARCHAR(50),
-    prcompra DEC(11, 2),
+    prcompra DEC(11, 2) NOT NULL,
 
-    codgravadora INT,
+    codgravadora INT NOT NULL,
 
     CONSTRAINT chk_dtcompra CHECK (dtcompra >= '2000-01-01'),
     CONSTRAINT chk_tipocompra CHECK (tipocompra = 'fisica' or tipocompra = 'download'),
@@ -90,21 +92,21 @@ CREATE TABLE album (
 ) ON spotper_fg01;
 
 CREATE TABLE tipoComposicao(
-    cod INT,
-    descricao VARCHAR(200),
+    cod INT NOT NULL,
+    descricao VARCHAR(200) NOT NULL UNIQUE,
 
     CONSTRAINT pk_codtipocomposicao PRIMARY KEY(cod)
 ) ON spotper_fg01;
 
 CREATE TABLE faixa (
-    codfaixa INT,
-    descricao VARCHAR(200),
-    numfaixa INT,
+    codfaixa INT NOT NULL,
+    descricao VARCHAR(200) NOT NULL UNIQUE,
+    numfaixa INT NOT NULL,
     tipogravacao VARCHAR(5),
     -- tempoexecucao in minute
-    tempo DEC(8, 2),
+    tempo TIME NOT NULL,
 
-    codalbum INT,
+    codalbum INT NOT NULL,
     codtipocomposicao INT,
 
     CONSTRAINT chk_tipogravacao CHECK (tipogravacao = 'ADD' or tipogravacao = 'DDD'),
@@ -120,9 +122,9 @@ CREATE INDEX faixa_IDX_codalbum ON faixa (codalbum) WITH (fillfactor = 100);
 CREATE INDEX faixa_IDX_codtipocomposicao ON faixa (codtipocomposicao) WITH (fillfactor = 100);
 
 CREATE TABLE periodoMusical (
-    codperiodomusical INT,
-    nome VARCHAR(30) NOT NULL,
-    descricao VARCHAR(600),
+    codperiodomusical INT NOT NULL,
+    nome VARCHAR(30) NOT NULL UNIQUE,
+    descricao VARCHAR(600) NOT NULL,
     dtinicio DATE,
     dtfim DATE,
 
@@ -130,14 +132,14 @@ CREATE TABLE periodoMusical (
 ) ON spotper_fg01;
 
 CREATE TABLE compositor (
-    codcompositor INT,
-    nome VARCHAR(200),
+    codcompositor INT NOT NULL,
+    nome VARCHAR(200) NOT NULL UNIQUE,
     dtnascimento DATE,
     dtmorte DATE,
-    cidade VARCHAR(50),
-    pais VARCHAR(50),
+    cidade VARCHAR(50) NOT NULL,
+    pais VARCHAR(50) NOT NULL,
 
-    codperiodomusical INT,
+    codperiodomusical INT NOT NULL,
 
     CONSTRAINT pk_codcompositor PRIMARY KEY(codcompositor),
     CONSTRAINT fk_codperiodomusical FOREIGN KEY(codperiodomusical)
@@ -145,18 +147,18 @@ CREATE TABLE compositor (
 ) ON spotper_fg01;
 
 CREATE TABLE interprete (
-    codinterprete INT,
-    nome VARCHAR(200),
-    tipo VARCHAR(20),
+    codinterprete INT NOT NULL,
+    nome VARCHAR(200) NOT NULL,
+    tipo VARCHAR(20) NOT NULL,
 
     CONSTRAINT pk_codinterprete PRIMARY KEY(codinterprete)
 ) ON spotper_fg01;
 
 -- without tempototal column
 CREATE TABLE playlist (
-    codplaylist INT,
-    nome VARCHAR(200),
-    dtnascimento DATETIME,
+    codplaylist INT NOT NULL,
+    nome VARCHAR(200) NOT NULL UNIQUE,
+    dtnascimento DATETIME NOT NULL,
 
     CONSTRAINT fk_codplaylist PRIMARY KEY(codplaylist)
 ) ON spotper_fg02;
