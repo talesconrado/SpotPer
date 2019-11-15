@@ -1,36 +1,36 @@
 -- Remove "--" if you want delete spotper database
-DROP DATABASE spotper;
+--DROP DATABASE spotper;
 
 -- Remove "--" if database spotper doesn't exist
 CREATE DATABASE spotper
  ON PRIMARY(
      NAME='spotper',
-     FILENAME='/home/phillipe/FBD/spotper/spotper.mdf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper.mdf',
      SIZE=5120KB,
      FILEGROWTH=1024KB
  ),
  FILEGROUP spotper_fg01 (
      NAME='spotper_01',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_01.ndf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_01.ndf',
      SIZE=2048KB,
      FILEGROWTH=30%
  ),
  (
      NAME='spotper_02',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_02.ndf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_02.ndf',
      SIZE=2048KB,
      FILEGROWTH=20%
  ),
  FILEGROUP spotper_fg02 (
      NAME='spotper_03',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_03.ndf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_03.ndf',
      SIZE=4096KB,
      MAXSIZE=8192KB,
      FILEGROWTH=15%
  )
  LOG ON (
      NAME='spotper_log',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_log.ldf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_log.ldf',
      SIZE=1024KB,
      FILEGROWTH=10%
  )
@@ -241,4 +241,26 @@ BEGIN
 ROLLBACK TRANSACTION;
 RETURN 
 END;
+GO
+
+--Function that receives as a parameter the name of a compositor and returns a table with his/hers album's
+CREATE FUNCTION lista_de_albuns (
+    @nome_compositor VARCHAR(200)
+)
+RETURNS TABLE
+AS
+RETURN
+    SELECT 
+        a.codalbum,
+        a.descricao
+    FROM
+        album a,
+        compostaPor cp,
+        faixa f,
+        compositor c
+    WHERE
+        c.nome = @nome_compositor AND
+        c.codcompositor = cp.codcompositor AND
+        cp.codfaixacompositor = f.codfaixa AND
+        f.codalbum = a.codalbum
 GO

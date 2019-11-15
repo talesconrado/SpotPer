@@ -1,4 +1,4 @@
-SELECT * FROM tipoComposicao ORDER BY cod
+USE spotper
 
 INSERT INTO faixa VALUES(
 	69,

@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	164,
 	'1812 Overture',

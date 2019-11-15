@@ -16,4 +16,6 @@ SELECT * FROM album;
 
 SELECT * FROM faixa;
 
+SELECT * FROM interpretadoPor;
+
 SELECT MAX(codfaixa) FROM faixa;
