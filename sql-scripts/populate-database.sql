@@ -151,11 +151,7 @@ INSERT INTO album VALUES (
     'Mozart: Violin Concert',
     '1950-4-22',
     '2006-5-1',
-<<<<<<< HEAD
-    'fisica',
-=======
     'física',
->>>>>>> 6f11b24bf2421e1fd7d9277769a2a490a4a0deae
     '150.00',
     0
 )
@@ -175,11 +171,7 @@ INSERT INTO album VALUES (
     'Relaxing Mozart',
     '1970-2-1',
     '2001-1-1',
-<<<<<<< HEAD
-    'fisica',
-=======
     'física',
->>>>>>> 6f11b24bf2421e1fd7d9277769a2a490a4a0deae
     '325.00',
     0
 )
@@ -191,11 +183,7 @@ INSERT INTO album VALUES (
     'Beethoven: Sonatas Nos. 1-6',
     '1978-9-19',
     '2003-6-3',
-<<<<<<< HEAD
-    'fisica',
-=======
     'física',
->>>>>>> 6f11b24bf2421e1fd7d9277769a2a490a4a0deae
     '325.00',
     0
 )
@@ -205,11 +193,7 @@ INSERT INTO album VALUES (
     'Relaxing with Beethoven',
     '1988-10-23',
     '2017-6-4',
-<<<<<<< HEAD
-    'fisica',
-=======
     'física',
->>>>>>> 6f11b24bf2421e1fd7d9277769a2a490a4a0deae
     '283.99',
     1
 )
@@ -221,11 +205,7 @@ INSERT INTO album VALUES (
     'Bach: Partitas for Keyboard',
     '1958-5-23',
     '2013-6-12',
-<<<<<<< HEAD
-    'fisica',
-=======
     'física',
->>>>>>> 6f11b24bf2421e1fd7d9277769a2a490a4a0deae
     '283.99',
     1
 )
@@ -235,11 +215,7 @@ INSERT INTO album VALUES (
     'Paul Tortelier Plays Bach',
     '1998-10-23',
     '2015-3-23',
-<<<<<<< HEAD
-    'fisica',
-=======
     'física',
->>>>>>> 6f11b24bf2421e1fd7d9277769a2a490a4a0deae
     '75.00',
     1
 )
@@ -433,4 +409,191 @@ INSERT INTO gravadora(codgravadora, nome, numero, cep) VALUES (
     60040531
 )
 
--- MUSICAS ALBUNS MOZART
+INSERT INTO compostaPor VALUES (0, 0)
+INSERT INTO compostaPor VALUES (0, 1)
+INSERT INTO compostaPor VALUES (0, 2)
+INSERT INTO compostaPor VALUES (0, 3)
+INSERT INTO compostaPor VALUES (0, 4)
+INSERT INTO compostaPor VALUES (0, 5)
+INSERT INTO compostaPor VALUES (0, 6)
+INSERT INTO compostaPor VALUES (0, 7)
+INSERT INTO compostaPor VALUES (0, 8)
+INSERT INTO compostaPor VALUES (0, 9)
+INSERT INTO compostaPor VALUES (0, 10)
+INSERT INTO compostaPor VALUES (0, 11)
+INSERT INTO compostaPor VALUES (0, 12)
+INSERT INTO compostaPor VALUES (0, 13)
+INSERT INTO compostaPor VALUES (0, 14)
+
+INSERT INTO compostaPor VALUES (0, 15)
+INSERT INTO compostaPor VALUES (0, 16)
+INSERT INTO compostaPor VALUES (0, 17)
+INSERT INTO compostaPor VALUES (0, 18)
+INSERT INTO compostaPor VALUES (0, 19)
+INSERT INTO compostaPor VALUES (0, 20)
+INSERT INTO compostaPor VALUES (0, 21)
+INSERT INTO compostaPor VALUES (0, 22)
+INSERT INTO compostaPor VALUES (0, 23)
+INSERT INTO compostaPor VALUES (0, 24)
+INSERT INTO compostaPor VALUES (0, 25)
+INSERT INTO compostaPor VALUES (0, 26)
+
+INSERT INTO compostaPor VALUES (0, 27)
+INSERT INTO compostaPor VALUES (0, 28)
+INSERT INTO compostaPor VALUES (0, 29)
+INSERT INTO compostaPor VALUES (0, 30)
+INSERT INTO compostaPor VALUES (0, 31)
+INSERT INTO compostaPor VALUES (0, 32)
+INSERT INTO compostaPor VALUES (0, 33)
+INSERT INTO compostaPor VALUES (0, 34)
+INSERT INTO compostaPor VALUES (0, 35)
+INSERT INTO compostaPor VALUES (0, 36)
+INSERT INTO compostaPor VALUES (0, 37)
+INSERT INTO compostaPor VALUES (0, 38)
+INSERT INTO compostaPor VALUES (0, 39)
+INSERT INTO compostaPor VALUES (0, 40)
+INSERT INTO compostaPor VALUES (0, 41)
+INSERT INTO compostaPor VALUES (0, 42)
+INSERT INTO compostaPor VALUES (0, 43)
+INSERT INTO compostaPor VALUES (0, 44)
+INSERT INTO compostaPor VALUES (0, 45)
+INSERT INTO compostaPor VALUES (0, 46)
+
+INSERT INTO compostaPor VALUES (2, 47)
+INSERT INTO compostaPor VALUES (2, 48)
+INSERT INTO compostaPor VALUES (2, 49)
+INSERT INTO compostaPor VALUES (2, 50)
+INSERT INTO compostaPor VALUES (2, 51)
+INSERT INTO compostaPor VALUES (2, 52)
+INSERT INTO compostaPor VALUES (2, 53)
+INSERT INTO compostaPor VALUES (2, 54)
+INSERT INTO compostaPor VALUES (2, 55)
+INSERT INTO compostaPor VALUES (2, 56)
+INSERT INTO compostaPor VALUES (2, 57)
+INSERT INTO compostaPor VALUES (2, 58)
+INSERT INTO compostaPor VALUES (2, 59)
+INSERT INTO compostaPor VALUES (2, 60)
+INSERT INTO compostaPor VALUES (2, 61)
+INSERT INTO compostaPor VALUES (2, 62)
+INSERT INTO compostaPor VALUES (2, 63)
+INSERT INTO compostaPor VALUES (2, 64)
+INSERT INTO compostaPor VALUES (2, 65)
+INSERT INTO compostaPor VALUES (2, 66)
+INSERT INTO compostaPor VALUES (2, 67)
+INSERT INTO compostaPor VALUES (2, 68)
+
+INSERT INTO compostaPor VALUES (2, 69)
+INSERT INTO compostaPor VALUES (2, 70)
+INSERT INTO compostaPor VALUES (2, 71)
+INSERT INTO compostaPor VALUES (2, 72)
+INSERT INTO compostaPor VALUES (2, 73)
+INSERT INTO compostaPor VALUES (2, 74)
+INSERT INTO compostaPor VALUES (2, 75)
+INSERT INTO compostaPor VALUES (2, 76)
+INSERT INTO compostaPor VALUES (2, 77)
+INSERT INTO compostaPor VALUES (2, 78)
+INSERT INTO compostaPor VALUES (2, 79)
+INSERT INTO compostaPor VALUES (2, 80)
+INSERT INTO compostaPor VALUES (2, 81)
+INSERT INTO compostaPor VALUES (2, 82)
+INSERT INTO compostaPor VALUES (2, 83)
+INSERT INTO compostaPor VALUES (2, 84)
+INSERT INTO compostaPor VALUES (2, 85)
+INSERT INTO compostaPor VALUES (2, 86)
+INSERT INTO compostaPor VALUES (2, 87)
+INSERT INTO compostaPor VALUES (2, 88)
+INSERT INTO compostaPor VALUES (2, 89)
+INSERT INTO compostaPor VALUES (2, 90)
+INSERT INTO compostaPor VALUES (2, 91)
+INSERT INTO compostaPor VALUES (2, 92)
+INSERT INTO compostaPor VALUES (2, 93)
+INSERT INTO compostaPor VALUES (2, 94)
+INSERT INTO compostaPor VALUES (2, 95)
+INSERT INTO compostaPor VALUES (2, 96)
+INSERT INTO compostaPor VALUES (2, 97)
+INSERT INTO compostaPor VALUES (2, 98)
+
+INSERT INTO compostaPor VALUES (1, 99)
+INSERT INTO compostaPor VALUES (1, 100)
+INSERT INTO compostaPor VALUES (1, 101)
+INSERT INTO compostaPor VALUES (1, 102)
+INSERT INTO compostaPor VALUES (1, 103)
+INSERT INTO compostaPor VALUES (1, 104)
+INSERT INTO compostaPor VALUES (1, 105)
+INSERT INTO compostaPor VALUES (1, 106)
+INSERT INTO compostaPor VALUES (1, 107)
+INSERT INTO compostaPor VALUES (1, 108)
+INSERT INTO compostaPor VALUES (1, 109)
+INSERT INTO compostaPor VALUES (1, 110)
+INSERT INTO compostaPor VALUES (1, 111)
+INSERT INTO compostaPor VALUES (1, 112)
+INSERT INTO compostaPor VALUES (1, 113)
+INSERT INTO compostaPor VALUES (1, 114)
+INSERT INTO compostaPor VALUES (1, 115)
+INSERT INTO compostaPor VALUES (1, 116)
+INSERT INTO compostaPor VALUES (1, 117)
+INSERT INTO compostaPor VALUES (1, 118)
+INSERT INTO compostaPor VALUES (1, 119)
+INSERT INTO compostaPor VALUES (1, 120)
+INSERT INTO compostaPor VALUES (1, 121)
+INSERT INTO compostaPor VALUES (1, 122)
+INSERT INTO compostaPor VALUES (1, 123)
+INSERT INTO compostaPor VALUES (1, 124)
+INSERT INTO compostaPor VALUES (1, 125)
+INSERT INTO compostaPor VALUES (1, 126)
+INSERT INTO compostaPor VALUES (1, 127)
+INSERT INTO compostaPor VALUES (1, 128)
+INSERT INTO compostaPor VALUES (1, 129)
+INSERT INTO compostaPor VALUES (1, 130)
+INSERT INTO compostaPor VALUES (1, 131)
+INSERT INTO compostaPor VALUES (1, 132)
+INSERT INTO compostaPor VALUES (1, 133)
+INSERT INTO compostaPor VALUES (1, 134)
+INSERT INTO compostaPor VALUES (1, 135)
+INSERT INTO compostaPor VALUES (1, 136)
+INSERT INTO compostaPor VALUES (1, 137)
+INSERT INTO compostaPor VALUES (1, 138)
+
+INSERT INTO compostaPor VALUES (1, 139)
+INSERT INTO compostaPor VALUES (1, 140)
+INSERT INTO compostaPor VALUES (1, 141)
+INSERT INTO compostaPor VALUES (1, 142)
+INSERT INTO compostaPor VALUES (1, 143)
+INSERT INTO compostaPor VALUES (1, 144)
+INSERT INTO compostaPor VALUES (1, 145)
+INSERT INTO compostaPor VALUES (1, 146)
+INSERT INTO compostaPor VALUES (1, 147)
+INSERT INTO compostaPor VALUES (1, 148)
+INSERT INTO compostaPor VALUES (1, 149)
+INSERT INTO compostaPor VALUES (1, 150)
+INSERT INTO compostaPor VALUES (1, 151)
+INSERT INTO compostaPor VALUES (1, 152)
+INSERT INTO compostaPor VALUES (1, 153)
+INSERT INTO compostaPor VALUES (1, 154)
+INSERT INTO compostaPor VALUES (1, 155)
+INSERT INTO compostaPor VALUES (1, 156)
+INSERT INTO compostaPor VALUES (1, 157)
+INSERT INTO compostaPor VALUES (1, 158)
+INSERT INTO compostaPor VALUES (1, 159)
+INSERT INTO compostaPor VALUES (1, 160)
+INSERT INTO compostaPor VALUES (1, 161)
+INSERT INTO compostaPor VALUES (1, 162)
+INSERT INTO compostaPor VALUES (1, 163)
+
+INSERT INTO compostaPor VALUES (3, 164)
+INSERT INTO compostaPor VALUES (3, 165)
+INSERT INTO compostaPor VALUES (3, 166)
+INSERT INTO compostaPor VALUES (3, 167)
+INSERT INTO compostaPor VALUES (3, 168)
+INSERT INTO compostaPor VALUES (3, 169)
+
+INSERT INTO compostaPor VALUES (4, 170)
+INSERT INTO compostaPor VALUES (4, 171)
+INSERT INTO compostaPor VALUES (4, 172)
+INSERT INTO compostaPor VALUES (4, 173)
+INSERT INTO compostaPor VALUES (4, 174)
+INSERT INTO compostaPor VALUES (4, 175)
+INSERT INTO compostaPor VALUES (4, 176)
+INSERT INTO compostaPor VALUES (4, 177)
+
+SELECT COUNT(*) FROM faixa;
