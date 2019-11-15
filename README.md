@@ -9,7 +9,7 @@ Trabalho final da disciplina de Fundamentos de Bancos de Dados, na UFC. Um "Spot
 
 Esse é um script criado por nós para facilitar a inserção de músicas de um determinado com    positor. Devido ao tempo, não foi possível estudar a API do Spotify para coletar os nomes     das músicas e criar queries para inserir em nosso banco de dados. Porém, criamos um script     que analisa o html da lista ordenada de músicas de um álbum coletadas manualmente e então     cria as sql queries quase completas para inserção.
 
-## Executando scrap.sh
+### Executando scrap.sh
 
 É preciso ter o  `Python3` e `BeautifulSoup` instalado. Para instalar o segundo, use o comando abaixo
 
