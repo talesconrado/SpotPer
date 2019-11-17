@@ -1,11 +1,11 @@
 {
   "name": "spotper-api",
   "version": "1.0.0",
-  "description": "An api that talk with spotper database",
+  "description": "An api that talks with spotper database",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"start": "NODE_ENV='development' node index.js"
+    "start": "NODE_ENV='development' node index.js"
   },
   "repository": {
     "type": "git",
