@@ -1,0 +1,36 @@
+{
+  "name": "spotper-api",
+  "version": "1.0.0",
+  "description": "An api that talk with spotper database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"start": "NODE_ENV='development' node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talesconrado/SpotPer.git"
+  },
+  "keywords": [
+    "spotper",
+    "fbd",
+    "ufc",
+    "api",
+    "sql",
+    "server",
+    "mssql"
+  ],
+  "author": "Phillipe Queiroz and Tales Conrado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talesconrado/SpotPer/issues"
+  },
+  "homepage": "https://github.com/talesconrado/SpotPer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mssql": "^6.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
