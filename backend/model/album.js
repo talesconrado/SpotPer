@@ -21,7 +21,7 @@ class Album {
 	}
 
 	getAlbumByName(albumName) {
-		const result = this.request.query(`SELECT * FROM album WHERE descricao = ${albumName}`);
+		const result = this.request.query(`SELECT * FROM album WHERE descricao LIKE '%${albumName}%'`);
 
 		return result;
 	}
@@ -42,6 +42,16 @@ class Album {
 		const result = this.request.query(`SELECT * FROM album WHERE prcompra <= ${albumPrice}`);
 
 		return result
+	}
+
+	getAlbumBetween(priceOne, priceTwo) {
+		if (priceOne > priceTwo) {
+			return {}
+		}
+
+		const result = this.request.query(`SELECT * FROM album WHERE prcompra BETWEEN ${priceOne} AND ${priceTwo}`)
+
+		return result;
 	}
 }
 
