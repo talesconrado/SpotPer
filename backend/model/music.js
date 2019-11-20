@@ -3,7 +3,7 @@ class Music {
 		this.pool = pool;
 		this.request = pool.request();
 
-		this.pool.on('err', err => {
+		this.pool.on('error', err => {
 			console.error('Pool Error', err);
 		});
 	}
