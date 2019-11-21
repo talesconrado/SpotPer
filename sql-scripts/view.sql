@@ -11,14 +11,14 @@ CREATE VIEW V1
     WHERE 
         fp.codfaixaplaylist = f.codfaixa AND fp.codplaylist = p.codplaylist
         AND f.codalbum = a.codalbum 
-    GROUP BY p.nome, f.codalbum
+    GROUP BY f.codalbum, p.nome
 
 GO
 
 Create unique clustered index I_V1
 on dbo.V1 (nome, codalbum)
 
---SELECT * FROM V1
+SELECT * FROM V1
 GO
 
 DROP VIEW IF EXISTS V2
