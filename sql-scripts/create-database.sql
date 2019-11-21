@@ -167,6 +167,8 @@ CREATE TABLE playlist (
 CREATE TABLE faixasNaPlaylist (
     codplaylist INT,
     codfaixaplaylist INT,
+    contadorfaixatocada INT,
+    dtultimaveztocada DATETIME
 
     CONSTRAINT fk_fnpcodplaylist FOREIGN KEY(codplaylist)
         REFERENCES playlist(codplaylist) ON UPDATE CASCADE ON DELETE CASCADE,
