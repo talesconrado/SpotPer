@@ -71,14 +71,14 @@ SELECT * FROM faixasNaPlaylist WHERE codplaylist = '60933cc2-132c-4fa6-8efb-b07e
 
 SELECT * FROM faixa
 
-INSERT INTO faixasNaPlaylist VALUES ('60933cc2-132c-4fa6-8efb-b07e9fdd7985', 2)
-INSERT INTO faixasNaPlaylist VALUES ('60933cc2-132c-4fa6-8efb-b07e9fdd7985', 10)
-INSERT INTO faixasNaPlaylist VALUES ('60933cc2-132c-4fa6-8efb-b07e9fdd7985', 11)
-INSERT INTO faixasNaPlaylist VALUES ('60933cc2-132c-4fa6-8efb-b07e9fdd7985', 12)
-INSERT INTO faixasNaPlaylist VALUES ('f5f48044-bce8-4c46-8912-c27f7069bf55', 70)
-INSERT INTO faixasNaPlaylist VALUES ('f5f48044-bce8-4c46-8912-c27f7069bf55', 90)
-INSERT INTO faixasNaPlaylist VALUES ('f5f48044-bce8-4c46-8912-c27f7069bf55', 120)
-INSERT INTO faixasNaPlaylist VALUES ('f5f48044-bce8-4c46-8912-c27f7069bf55', 167)
+INSERT INTO faixasNaPlaylist VALUES (1, 2)
+INSERT INTO faixasNaPlaylist VALUES (1, 10)
+INSERT INTO faixasNaPlaylist VALUES (2, 11)
+INSERT INTO faixasNaPlaylist VALUES (2, 12)
+INSERT INTO faixasNaPlaylist VALUES (2, 70)
+INSERT INTO faixasNaPlaylist VALUES (3, 90)
+INSERT INTO faixasNaPlaylist VALUES (3, 120)
+INSERT INTO faixasNaPlaylist VALUES (3, 167)
 
 SELECT codfaixa, f.descricao, tempo, a.codalbum, tc.cod, a.descricao, tc.descricao
 FROM playlist p, faixasNaPlaylist fnp, faixa f, album a, tipoComposicao tc

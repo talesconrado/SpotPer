@@ -41,20 +41,17 @@ router.get('/:playlistId', (req, res, next) => {
 		})
 });
 
-router.get('/add-playlist', (req, res, next) => {
-	const { name } = req.query;
+router.get('/add-playlist/:playlistName', (req, res, next) => {
+	const name = req.params.playlistName;
 
-	console.log(name);
+	poolConnection
+		.then(() => playlist.createPlaylist(name))
+		.then(playlist => {
+			console.log(playlist);
 
-	if (!name) {
-		res.status(400).json({ status: 400, msg: `You need pass a playlist name` });
-	} else {
-		poolConnection
-			.then(() => playlist.createPlaylist(name))
-			.then(playlist => console.log(playlist))
-			.then(() => res.send('wat'))
-			.catch(err => next(err));
-	}
+			res.status(200).send({ status: 200, msg: `Playlist ${name} created` });
+		})
+		.catch(err => next(err));
 });
 
 router.delete('/del-playlist/:playlistId', (req, res, next) => {

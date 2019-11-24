@@ -8,7 +8,7 @@ class Playlist {
 	}
 
 	createPlaylist(playlistName) {
-		const result = this.request.query(`INSERT INTO playlist VALUES('${playlistName}', CURRENT_TIMESTAMP)`);
+		const result = this.request.query(`INSERT INTO playlist(nome, dtnascimento) VALUES('${playlistName}', CURRENT_TIMESTAMP)`);
 
 		return result;
 	}
