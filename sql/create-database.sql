@@ -157,7 +157,7 @@ CREATE TABLE interprete (
 
 -- without tempototal column
 CREATE TABLE playlist (
-    codplaylist INT NOT NULL,
+    codplaylist INT IDENTITY(1,1),
     nome VARCHAR(200) NOT NULL UNIQUE,
     dtnascimento DATETIME NOT NULL,
 
