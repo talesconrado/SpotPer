@@ -12,29 +12,54 @@ router.get('/', (req, res, next) => {
 	poolConnection
 		.then(() => playlist.getPlaylists())
 		.then(playlists => {
-			const data = playlists.recordset;
+			const data = playlists.recordset
 
 			if (data.length > 1) {
-				return data;
+				res.status(200).json(data);
 			} else if (data.length > 0) {
-				return data[0];
+				res.status(200).json(data[0]);
 			} else {
-				return undefined;
-			}
-		})
-		.then(playlists => {
-			if (playlists) {
-				res.status(200).json(playlists);
-			} else {
-				res.status(404).json({ status: 404, msg: 'There is no playlist' });
+				res.status(404).json({ status: 404, msg: `There is not playlist` });
 			}
 		})
 		.catch(err => next(err));
 });
 
+router.get('/:playlistId', (req, res, next) => {
+	const { playlistId } = req.params;
+	
+	poolConnection
+		.then(() => playlist.getPlaylistMusics(playlistId))
+		.then(musics => {
+			const data = musics.recordset;
+
+			if (!data) {
+				res.status(404).json({ status: 404, msg: `There is not music for playlist with id ${playlistId}` })
+			} else {
+				res.status(200).json(data);
+			}
+		})
+});
+
+router.get('/add-playlist', (req, res, next) => {
+	const { name } = req.query;
+
+	console.log(name);
+
+	if (!name) {
+		res.status(400).json({ status: 400, msg: `You need pass a playlist name` });
+	} else {
+		poolConnection
+			.then(() => playlist.createPlaylist(name))
+			.then(playlist => console.log(playlist))
+			.then(() => res.send('wat'))
+			.catch(err => next(err));
+	}
+});
+
 router.delete('/del-playlist/:playlistId', (req, res, next) => {
 	const playlistId = req.params.playlistId;
-	
+
 	poolConnection
 		.then(() => playlist.deletePlaylist(playlistId))
 		.then(() => res.status(200).json({ status: 200, msg: `playlist with id ${playlistId} deleted` }))
@@ -44,12 +69,28 @@ router.delete('/del-playlist/:playlistId', (req, res, next) => {
 router.delete('/del-music/:playlistId/:musicId', (req, res, next) => {
 	const { playlistId, musicId } = req.params;
 
+	if (!playlistId || !musicId) {
+		res.status(400).json({ status: 400, msg: 'You need pass a playlistId or musicId params' });
+	}
+
 	poolConnection
 		.then(() => playlist.deleteMusicOfPlaylist(playlistId, musicId))
 		.then(() => res.status(200).json({ status: 200, msg: `music deleted from playlist with id ${playlistId}` }))
 		.catch(err => next(err));
-})
+});
 
+router.get('/add-music/:playlistId/:musicId', (req, res, next) => {
+	const { playlistId, musicId } = req.params;
+
+	if (!playlistId || !musicId) {
+		res.status(400).json({ status: 400, msg: 'You need pass a playlistId or musicId params' });
+	}
+
+	poolConnection
+		.then(() => playlist.addMusicInPlaylist(playlistId, musicId))
+		.then(() => res.status(200).json({ status: 200, msg: `music ${musicId} added in playlist ${playlistId}` }))
+		.catch(err => next(err));
+});
 
 router.use((err, req, res, next) => {
 	console.error('Internal Error', err);

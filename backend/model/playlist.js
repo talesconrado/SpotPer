@@ -8,7 +8,7 @@ class Playlist {
 	}
 
 	createPlaylist(playlistName) {
-		const result = this.request.query(`INSERT INTO playlist VALUES (NEWID(), ${playlistname}, CURRENT_TIMESTAMP)`);
+		const result = this.request.query(`INSERT INTO playlist VALUES('${playlistName}', CURRENT_TIMESTAMP)`);
 
 		return result;
 	}
@@ -19,6 +19,24 @@ class Playlist {
 		return result;
 	}
 
+	getPlaylistWithMusics(playlists) {
+		const data = playlists.recordset;
+
+		const promises = data.map(elem => this.getPlaylistMusics(elem.codplaylist));
+
+		return Promise.all(promises)
+			.then(res => res.map(elem => elem.recordset))
+			.then(musics => {
+				return data.map((elem, ind) => {
+					const copy = Object.assign({}, elem, { musics: [...musics[ind]] })
+
+					return copy
+				});
+
+			})
+			.catch(err => err);
+	}
+
 	getPlaylistById(playlistId) {
 		const result = this.request.query(`SELECT * WHERE codplaylist = ${playlistId}`);
 
@@ -26,9 +44,9 @@ class Playlist {
 	}
 
 	getPlaylistMusics(playlistId) {
-		const result = this.request.query(`SELECT codfaixa, f.descricao, tempo, a.codalbum, tc.cod, a.descricao, tc.descricao FROM playlist p, faixasNaPlaylist fnp, faixa f, album a, tipoComposicao tc WHERE p.codplaylist = fnp.codplaylist AND fnp.codfaixaplaylist = f.codfaixa AND f.codalbum = a.codalbum AND f.codtipocomposicao = tc.cod;`);
+			const result = this.request.query(`SELECT f.codfaixa, f.descricao AS 'musica', f.tipogravacao, f.tempo, f.codalbum, c.codcompositor, c.nome AS 'compositor', tc.descricao AS 'periodoMusical' FROM playlist pl, faixasNaPlaylist fnp, faixa f, compostaPor cp, compositor c, tipoComposicao tc WHERE pl.codplaylist = fnp.codplaylist AND fnp.codfaixaplaylist = f.codfaixa AND f.codfaixa = cp.codfaixacompositor AND cp.codcompositor = c.codcompositor AND f.codtipocomposicao = tc.cod AND pl.codplaylist = '${playlistId}'`)
 
-		return result;
+			return result;
 	}
 
 	deletePlaylist(playlistId) {
@@ -50,7 +68,7 @@ class Playlist {
 	}
 
 	addMusicInPlaylist(playlistId, musicId) {
-		const result = this.request.query(`INSERT INTO faixasNaPlaylist VALUES(${playlistId}, ${musicId})`);
+		const result = this.request.query(`INSERT INTO faixasNaPlaylist VALUES('${playlistId}', ${musicId})`);
 
 		return result;
 	}
