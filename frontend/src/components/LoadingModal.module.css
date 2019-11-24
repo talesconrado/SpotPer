@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@keyframes rotateDisc {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.modalLoading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 200;
+
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: rgba(0,0,0, .8);
+}
+
+.modalLoadingContent img {
+	transform-origin: center center;
+	animation-fill-mode: forwards;
+	animation: rotateDisc 2s linear infinite;
+}
+
+.modalLoadingContent h2 {
+	color: #fff;
+	letter-spacing: 2px;
+}

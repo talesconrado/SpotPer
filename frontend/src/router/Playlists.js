@@ -12,20 +12,30 @@ class Playlists extends Component {
 
 		this.state = {
 			playlists: [],
-			loading: false,
-			modal: false
-		}
+			loading: true,
+			modal: false,
+			}
 	}
 
 	componentDidMount() {
 		this.fetchPlaylist()
 			.then(playlists => {
-				this.setState({ playlists })
+				return this.wait(1000).then(() => playlists);
+			})
+			.then(playlists => {
+				this.setState({ playlists, loading: false });
 			})
 			.catch(err => console.log(err));
 	}
 
-	fetchPlaylist = () => {
+	wait = (milisecond) => {
+		return new Promise(resolve => {
+			setTimeout(resolve, milisecond);
+		});
+	}
+
+	fetchPlaylist = async () => {
+
 		return fetch('/playlist')
 			.then(res => res.json())
 			.catch(err => err);

@@ -10,6 +10,7 @@ import {
 
 import SideBar from './components/SideBar.js';
 import Playlists from './router/Playlists.js';
+import PlaylistMusics from './router/PlaylistMusics.js';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
 					<Redirect to="/playlist" />
 				</Route>
 
-				<Route path="/playlist/:playlistId">
+				<Route path="/playlist/:playlistId" component={PlaylistMusics}>
 				</Route>
 
 				<Route path="/playlist">

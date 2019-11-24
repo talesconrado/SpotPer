@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.playlistMusics {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

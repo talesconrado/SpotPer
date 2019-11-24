@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+.musicItem {
+	display: flex;
+	height: 65px;
+	max-width: 600px;
+	margin: 20px 0;
+
+	background-color: #202020;
+
+	position: relative;
+
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+	transition: background-color 1s linear;
+}
+
+.musicItem:hover {
+	background-color: #707070;
+}
+
+.play {
+	height: 30px;
+	width: 30px;
+	align-self: center;
+	border-radius: 50%;
+	border: none;
+	padding: 0;
+	margin: 0 20px;
+	
+	background-color: #6cff7e;
+}
+
+.musicInfos {
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.musicInfos h2 {
+	color: #fff;
+	font-size: 14px;
+	margin: 0;
+}
+
+.musicExtraInfos {
+	margin: 2px 0;
+	font-size: 12px;
+	color: #fff;
+	letter-spacing: 1.2px;
+}
+
+.musicExtraInfos a {
+	color: #fff;
+	font-size: 12px;
+}
+
+.musicTime {
+	line-height: 30px;
+	color: #fff;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.deleteBtn {
+	width: 20px;
+	height: 25px;
+	padding: 0;
+
+	border: none;
+	background-color: transparent;
+
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.deleteBtn section {
+	width: 20px;
+	height: 3px;
+	background-color: #E8754F;
+
+	transform-origin: center center;
+	transform: rotate(45deg);
+}
+
+.deleteBtn section::after {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 3px;
+	top: 0;
+	right: 0;
+	background-color: #E8754F;
+
+	transform-origin: center center;
+	transform: rotate(90deg);
+}
