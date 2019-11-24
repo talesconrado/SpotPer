@@ -108,6 +108,24 @@ INSERT INTO endereco VALUES (
     'Avenida 13 de maio'
 )
 
+INSERT INTO endereco VALUES (
+    2840,
+    60025200,
+    'Brasil',
+    'Ceará',
+    'Fortaleza',
+    'Rua Leandro Monteiro'
+)
+
+INSERT INTO endereco VALUES (
+    1700,
+    62960000,
+    'Brasil',
+    'Ceará',
+    'Tabuleiro do Norte',
+    'Rua Acelino Maia'
+)
+
 INSERT INTO gravadora(codgravadora, nome, numero, cep) VALUES (
     0,
     'Warner Gravadora',
@@ -120,6 +138,20 @@ INSERT INTO gravadora(codgravadora, nome, numero, cep) VALUES (
     'Sony Gravadora',
     1095,
     60040531
+)
+
+INSERT INTO gravadora(codgravadora, nome, numero, cep) VALUES (
+    2,
+    'B-Side Records',
+    2840,
+    60025200
+)
+
+INSERT INTO gravadora(codgravadora, nome, numero, cep) VALUES (
+    3,
+    'Som Nativo',
+    1700,
+    62960000
 )
 
 -- Mozart albuns
@@ -173,7 +205,7 @@ INSERT INTO album VALUES (
     '2001-1-1',
     'física',
     '325.00',
-    0
+    1
 )
 
 -- BEETHOVEN
@@ -185,7 +217,7 @@ INSERT INTO album VALUES (
     '2003-6-3',
     'física',
     '325.00',
-    0
+    1
 )
 
 INSERT INTO album VALUES (
@@ -195,7 +227,7 @@ INSERT INTO album VALUES (
     '2017-6-4',
     'física',
     '283.99',
-    1
+    2
 )
 
 -- SEBASTIAN BACH
@@ -207,7 +239,7 @@ INSERT INTO album VALUES (
     '2013-6-12',
     'física',
     '283.99',
-    1
+    2
 )
 
 INSERT INTO album VALUES (
@@ -217,7 +249,7 @@ INSERT INTO album VALUES (
     '2015-3-23',
     'física',
     '75.00',
-    1
+    3
 )
 
 -- TCHAIKOVSKI
@@ -229,7 +261,7 @@ INSERT INTO album VALUES (
     '2013-4-5',
     'download',
     '42.00',
-    0
+    3
 )
 
 -- Dvorak album
@@ -272,6 +304,20 @@ INSERT INTO telefone VALUES (
     1
 )
 
+INSERT INTO telefone VALUES (
+    32258997,
+    85,
+    55,
+    2
+)
+
+INSERT INTO telefone VALUES (
+    32243327,
+    88,
+    55,
+    3
+)
+
 INSERT INTO tipoComposicao VALUES (
     0,
     'Concerto'
@@ -296,6 +342,42 @@ INSERT INTO tipoComposicao VALUES (
     4,
     'Sinfonia'
 )
+
+INSERT INTO interprete(codinterprete, nome, tipo) VALUES (
+    0,
+    'Orquestra Sinfônica da Universidade Federal do Ceará',
+    'Orquestra'
+)
+
+
+INSERT INTO interprete(codinterprete, nome, tipo) VALUES (
+    1,
+    'Trio Cordas Vivas',
+    'Trio'
+)
+
+
+INSERT INTO interprete(codinterprete, nome, tipo) VALUES (
+    2,
+    'Quarteto Sereneta',
+    'Quarteto'
+)
+
+
+INSERT INTO interprete(codinterprete, nome, tipo) VALUES (
+    3,
+    'Orquestra Sinfônica Brasileira',
+    'Orquestra'
+)
+
+
+INSERT INTO interprete(codinterprete, nome, tipo) VALUES (
+    4,
+    'Quarteto La Noche',
+    'Quarteto'
+)
+
+
 
 INSERT INTO compostaPor VALUES (0, 0)
 INSERT INTO compostaPor VALUES (0, 1)
@@ -483,3 +565,190 @@ INSERT INTO compostaPor VALUES (4, 174)
 INSERT INTO compostaPor VALUES (4, 175)
 INSERT INTO compostaPor VALUES (4, 176)
 INSERT INTO compostaPor VALUES (4, 177)
+
+INSERT INTO interpretadoPor VALUES (0, 0)
+INSERT INTO interpretadoPor VALUES (0, 1)
+INSERT INTO interpretadoPor VALUES (0, 2)
+INSERT INTO interpretadoPor VALUES (0, 3)
+INSERT INTO interpretadoPor VALUES (0, 4)
+INSERT INTO interpretadoPor VALUES (0, 5)
+INSERT INTO interpretadoPor VALUES (0, 6)
+INSERT INTO interpretadoPor VALUES (0, 7)
+INSERT INTO interpretadoPor VALUES (0, 8)
+INSERT INTO interpretadoPor VALUES (0, 9)
+INSERT INTO interpretadoPor VALUES (0, 10)
+INSERT INTO interpretadoPor VALUES (0, 11)
+INSERT INTO interpretadoPor VALUES (0, 12)
+INSERT INTO interpretadoPor VALUES (0, 13)
+INSERT INTO interpretadoPor VALUES (0, 14)
+
+INSERT INTO interpretadoPor VALUES (0, 15)
+INSERT INTO interpretadoPor VALUES (0, 16)
+INSERT INTO interpretadoPor VALUES (0, 17)
+INSERT INTO interpretadoPor VALUES (0, 18)
+INSERT INTO interpretadoPor VALUES (0, 19)
+INSERT INTO interpretadoPor VALUES (0, 20)
+INSERT INTO interpretadoPor VALUES (0, 21)
+INSERT INTO interpretadoPor VALUES (0, 22)
+INSERT INTO interpretadoPor VALUES (0, 23)
+INSERT INTO interpretadoPor VALUES (0, 24)
+INSERT INTO interpretadoPor VALUES (0, 25)
+INSERT INTO interpretadoPor VALUES (0, 26)
+
+INSERT INTO interpretadoPor VALUES (1, 27)
+INSERT INTO interpretadoPor VALUES (1, 28)
+INSERT INTO interpretadoPor VALUES (1, 29)
+INSERT INTO interpretadoPor VALUES (1, 30)
+INSERT INTO interpretadoPor VALUES (1, 31)
+INSERT INTO interpretadoPor VALUES (1, 32)
+INSERT INTO interpretadoPor VALUES (1, 33)
+INSERT INTO interpretadoPor VALUES (1, 34)
+INSERT INTO interpretadoPor VALUES (1, 35)
+INSERT INTO interpretadoPor VALUES (1, 36)
+INSERT INTO interpretadoPor VALUES (1, 37)
+INSERT INTO interpretadoPor VALUES (1, 38)
+INSERT INTO interpretadoPor VALUES (1, 39)
+INSERT INTO interpretadoPor VALUES (1, 40)
+INSERT INTO interpretadoPor VALUES (1, 41)
+INSERT INTO interpretadoPor VALUES (1, 42)
+INSERT INTO interpretadoPor VALUES (1, 43)
+INSERT INTO interpretadoPor VALUES (1, 44)
+INSERT INTO interpretadoPor VALUES (1, 45)
+INSERT INTO interpretadoPor VALUES (1, 46)
+
+INSERT INTO interpretadoPor VALUES (2, 47)
+INSERT INTO interpretadoPor VALUES (2, 48)
+INSERT INTO interpretadoPor VALUES (2, 49)
+INSERT INTO interpretadoPor VALUES (2, 50)
+INSERT INTO interpretadoPor VALUES (2, 51)
+INSERT INTO interpretadoPor VALUES (2, 52)
+INSERT INTO interpretadoPor VALUES (2, 53)
+INSERT INTO interpretadoPor VALUES (2, 54)
+INSERT INTO interpretadoPor VALUES (2, 55)
+INSERT INTO interpretadoPor VALUES (2, 56)
+INSERT INTO interpretadoPor VALUES (2, 57)
+INSERT INTO interpretadoPor VALUES (2, 58)
+INSERT INTO interpretadoPor VALUES (2, 59)
+INSERT INTO interpretadoPor VALUES (2, 60)
+INSERT INTO interpretadoPor VALUES (2, 61)
+INSERT INTO interpretadoPor VALUES (2, 62)
+INSERT INTO interpretadoPor VALUES (2, 63)
+INSERT INTO interpretadoPor VALUES (2, 64)
+INSERT INTO interpretadoPor VALUES (2, 65)
+INSERT INTO interpretadoPor VALUES (2, 66)
+INSERT INTO interpretadoPor VALUES (2, 67)
+INSERT INTO interpretadoPor VALUES (2, 68)
+
+INSERT INTO interpretadoPor VALUES (2, 69)
+INSERT INTO interpretadoPor VALUES (2, 70)
+INSERT INTO interpretadoPor VALUES (2, 71)
+INSERT INTO interpretadoPor VALUES (2, 72)
+INSERT INTO interpretadoPor VALUES (2, 73)
+INSERT INTO interpretadoPor VALUES (2, 74)
+INSERT INTO interpretadoPor VALUES (2, 75)
+INSERT INTO interpretadoPor VALUES (2, 76)
+INSERT INTO interpretadoPor VALUES (2, 77)
+INSERT INTO interpretadoPor VALUES (2, 78)
+INSERT INTO interpretadoPor VALUES (2, 79)
+INSERT INTO interpretadoPor VALUES (2, 80)
+INSERT INTO interpretadoPor VALUES (2, 81)
+INSERT INTO interpretadoPor VALUES (2, 82)
+INSERT INTO interpretadoPor VALUES (2, 83)
+INSERT INTO interpretadoPor VALUES (2, 84)
+INSERT INTO interpretadoPor VALUES (2, 85)
+INSERT INTO interpretadoPor VALUES (2, 86)
+INSERT INTO interpretadoPor VALUES (2, 87)
+INSERT INTO interpretadoPor VALUES (2, 88)
+INSERT INTO interpretadoPor VALUES (2, 89)
+INSERT INTO interpretadoPor VALUES (2, 90)
+INSERT INTO interpretadoPor VALUES (2, 91)
+INSERT INTO interpretadoPor VALUES (2, 92)
+INSERT INTO interpretadoPor VALUES (2, 93)
+INSERT INTO interpretadoPor VALUES (2, 94)
+INSERT INTO interpretadoPor VALUES (2, 95)
+INSERT INTO interpretadoPor VALUES (2, 96)
+INSERT INTO interpretadoPor VALUES (2, 97)
+INSERT INTO interpretadoPor VALUES (2, 98)
+
+INSERT INTO interpretadoPor VALUES (3, 99)
+INSERT INTO interpretadoPor VALUES (3, 100)
+INSERT INTO interpretadoPor VALUES (3, 101)
+INSERT INTO interpretadoPor VALUES (3, 102)
+INSERT INTO interpretadoPor VALUES (3, 103)
+INSERT INTO interpretadoPor VALUES (3, 104)
+INSERT INTO interpretadoPor VALUES (3, 105)
+INSERT INTO interpretadoPor VALUES (3, 106)
+INSERT INTO interpretadoPor VALUES (3, 107)
+INSERT INTO interpretadoPor VALUES (3, 108)
+INSERT INTO interpretadoPor VALUES (3, 109)
+INSERT INTO interpretadoPor VALUES (3, 110)
+INSERT INTO interpretadoPor VALUES (3, 111)
+INSERT INTO interpretadoPor VALUES (3, 112)
+INSERT INTO interpretadoPor VALUES (3, 113)
+INSERT INTO interpretadoPor VALUES (3, 114)
+INSERT INTO interpretadoPor VALUES (3, 115)
+INSERT INTO interpretadoPor VALUES (3, 116)
+INSERT INTO interpretadoPor VALUES (3, 117)
+INSERT INTO interpretadoPor VALUES (3, 118)
+INSERT INTO interpretadoPor VALUES (3, 119)
+INSERT INTO interpretadoPor VALUES (3, 120)
+INSERT INTO interpretadoPor VALUES (3, 121)
+INSERT INTO interpretadoPor VALUES (3, 122)
+INSERT INTO interpretadoPor VALUES (3, 123)
+INSERT INTO interpretadoPor VALUES (3, 124)
+INSERT INTO interpretadoPor VALUES (3, 125)
+INSERT INTO interpretadoPor VALUES (3, 126)
+INSERT INTO interpretadoPor VALUES (3, 127)
+INSERT INTO interpretadoPor VALUES (3, 128)
+INSERT INTO interpretadoPor VALUES (3, 129)
+INSERT INTO interpretadoPor VALUES (3, 130)
+INSERT INTO interpretadoPor VALUES (3, 131)
+INSERT INTO interpretadoPor VALUES (3, 132)
+INSERT INTO interpretadoPor VALUES (3, 133)
+INSERT INTO interpretadoPor VALUES (3, 134)
+INSERT INTO interpretadoPor VALUES (3, 135)
+INSERT INTO interpretadoPor VALUES (3, 136)
+INSERT INTO interpretadoPor VALUES (3, 137)
+INSERT INTO interpretadoPor VALUES (3, 138)
+
+INSERT INTO interpretadoPor VALUES (0, 139)
+INSERT INTO interpretadoPor VALUES (0, 140)
+INSERT INTO interpretadoPor VALUES (0, 141)
+INSERT INTO interpretadoPor VALUES (0, 142)
+INSERT INTO interpretadoPor VALUES (0, 143)
+INSERT INTO interpretadoPor VALUES (0, 144)
+INSERT INTO interpretadoPor VALUES (0, 145)
+INSERT INTO interpretadoPor VALUES (0, 146)
+INSERT INTO interpretadoPor VALUES (0, 147)
+INSERT INTO interpretadoPor VALUES (0, 148)
+INSERT INTO interpretadoPor VALUES (0, 149)
+INSERT INTO interpretadoPor VALUES (0, 150)
+INSERT INTO interpretadoPor VALUES (0, 151)
+INSERT INTO interpretadoPor VALUES (0, 152)
+INSERT INTO interpretadoPor VALUES (0, 153)
+INSERT INTO interpretadoPor VALUES (0, 154)
+INSERT INTO interpretadoPor VALUES (0, 155)
+INSERT INTO interpretadoPor VALUES (0, 156)
+INSERT INTO interpretadoPor VALUES (0, 157)
+INSERT INTO interpretadoPor VALUES (0, 158)
+INSERT INTO interpretadoPor VALUES (0, 159)
+INSERT INTO interpretadoPor VALUES (0, 160)
+INSERT INTO interpretadoPor VALUES (0, 161)
+INSERT INTO interpretadoPor VALUES (0, 162)
+INSERT INTO interpretadoPor VALUES (0, 163)
+
+INSERT INTO interpretadoPor VALUES (3, 164)
+INSERT INTO interpretadoPor VALUES (3, 165)
+INSERT INTO interpretadoPor VALUES (3, 166)
+INSERT INTO interpretadoPor VALUES (3, 167)
+INSERT INTO interpretadoPor VALUES (3, 168)
+INSERT INTO interpretadoPor VALUES (3, 169)
+
+INSERT INTO interpretadoPor VALUES (4, 170)
+INSERT INTO interpretadoPor VALUES (4, 171)
+INSERT INTO interpretadoPor VALUES (4, 172)
+INSERT INTO interpretadoPor VALUES (4, 173)
+INSERT INTO interpretadoPor VALUES (4, 174)
+INSERT INTO interpretadoPor VALUES (4, 175)
+INSERT INTO interpretadoPor VALUES (4, 176)
+INSERT INTO interpretadoPor VALUES (4, 177)

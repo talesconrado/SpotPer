@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	170,
 	'Rusalka - Overture',

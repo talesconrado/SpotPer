@@ -6,10 +6,13 @@ const express = require('express');
 const app = express();
 
 // routers
+
 const album = require('./router/album');
 const playlist = require('./router/playlist');
+const music = require('./router/music.js');
 
 app.use('/album', album);
+app.use('/music', music);
 app.use('/playlist', playlist);
 
 app.use((req, res, next) => {

@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	27,
 	'Divertimento in D, K.334 - Arranged by David Overton: 3. Menuetto - Trio - Menuetto',

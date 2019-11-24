@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	99,
 	'Partita No. 1 in B-Flat Major, BWV 825: I. Praeludium',

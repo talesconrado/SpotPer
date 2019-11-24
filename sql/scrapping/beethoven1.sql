@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	47,
 	'Piano Sonata No.1 In F Minor, Op.2 No.1: 1. Allegro',

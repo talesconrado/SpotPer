@@ -1,36 +1,36 @@
 -- Remove "--" if you want delete spotper database
-DROP DATABASE spotper;
+--DROP DATABASE spotper;
 
 -- Remove "--" if database spotper doesn't exist
 CREATE DATABASE spotper
  ON PRIMARY(
      NAME='spotper',
-     FILENAME='/home/phillipe/FBD/spotper/spotper.mdf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper.mdf',
      SIZE=5120KB,
      FILEGROWTH=1024KB
  ),
  FILEGROUP spotper_fg01 (
      NAME='spotper_01',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_01.ndf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_01.ndf',
      SIZE=2048KB,
      FILEGROWTH=30%
  ),
  (
      NAME='spotper_02',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_02.ndf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_02.ndf',
      SIZE=2048KB,
      FILEGROWTH=20%
  ),
  FILEGROUP spotper_fg02 (
      NAME='spotper_03',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_03.ndf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_03.ndf',
      SIZE=4096KB,
      MAXSIZE=8192KB,
      FILEGROWTH=15%
  )
  LOG ON (
      NAME='spotper_log',
-     FILENAME='/home/phillipe/FBD/spotper/spotper_log.ldf',
+     FILENAME='/home/talesc/Documents/fbd/db_spotper/spotper_log.ldf',
      SIZE=1024KB,
      FILEGROWTH=10%
  )
@@ -167,6 +167,8 @@ CREATE TABLE playlist (
 CREATE TABLE faixasNaPlaylist (
     codplaylist INT,
     codfaixaplaylist INT,
+    contadorfaixatocada INT,
+    dtultimaveztocada DATETIME
 
     CONSTRAINT fk_fnpcodplaylist FOREIGN KEY(codplaylist)
         REFERENCES playlist(codplaylist) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -193,52 +195,4 @@ CREATE TABLE compostaPor (
     CONSTRAINT fk_codfaixacompositor FOREIGN KEY(codfaixacompositor)
         REFERENCES faixa(codfaixa) ON UPDATE CASCADE ON DELETE CASCADE
 ) ON spotper_fg01;
-GO
-
--- Here are only the triggers, so we've put this "GO" before those statements
-
-CREATE TRIGGER faixa_TR_tamanhoalbum ON faixa
-AFTER INSERT, UPDATE
-AS
-IF EXISTS (
-           SELECT f.codalbum FROM faixa f, inserted i 
-           WHERE i.codalbum = f.codalbum 
-           GROUP BY f.codalbum 
-           HAVING COUNT(f.codalbum) > 64
-          )
-BEGIN
-ROLLBACK TRANSACTION;
-RETURN 
-END;
-GO
-
-CREATE TRIGGER album_TR_prcompra ON album
-AFTER INSERT, UPDATE
-AS
-IF EXISTS (
-           SELECT i.prcompra FROM inserted i 
-           GROUP BY i.prcompra
-           HAVING i.prcompra > 3 * (SELECT AVG(a.prcompra) FROM album a, faixa f WHERE f.codalbum = a.codalbum
-                                    AND (f.tipogravacao NOT IN ('ADD')))
-          )
-BEGIN
-ROLLBACK TRANSACTION;
-RETURN 
-END;
-GO
-
-CREATE TRIGGER faixa_TR_barrocoDDD ON compostaPor
-AFTER INSERT, UPDATE
-AS
-IF EXISTS (
-           SELECT i.codfaixacompositor FROM inserted i, faixa f, periodoMusical p, compositor c
-           WHERE i.codcompositor = c.codcompositor
-           AND c.codperiodomusical = p.codperiodomusical AND i.codfaixacompositor = f.codfaixa 
-           AND f.tipogravacao = 'ADD'
-           AND p.codperiodomusical = 0
-          )
-BEGIN
-ROLLBACK TRANSACTION;
-RETURN 
-END;
 GO

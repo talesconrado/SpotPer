@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	139,
 	'Cello Suite No. 1 in G Major, BWV 1007: I. Prélude',

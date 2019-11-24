@@ -1,3 +1,5 @@
+USE spotper
+
 INSERT INTO faixa VALUES(
 	0,
 	'Violin Concerto No. 1 in B-Flat Major, K. 207: I. Allegro moderato',
