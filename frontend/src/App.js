@@ -1,10 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect
+} from 'react-router-dom';
+
+import SideBar from './components/SideBar.js';
+import Playlists from './router/Playlists.js';
 
 function App() {
   return (
-    null
+		<Router>
+			<SideBar />
+			<Switch>
+				<Route exact path="/">
+					<Redirect to="/playlist" />
+				</Route>
+
+				<Route path="/playlist/:playlistId">
+				</Route>
+
+				<Route path="/playlist">
+					<Playlists />
+				</Route>
+
+				<Route path="/album/:albumId">
+				</Route>
+
+				<Route path="/album">
+				</Route>
+			</Switch>
+		</Router>
   );
 }
 
