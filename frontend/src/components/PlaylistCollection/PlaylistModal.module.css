@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+.modalShadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 200;
+
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgba(0,0,0, 0.8);
+}
+
+.modalContent {
+	width: 400px;
+	height: 200px;
+	background-color: #222;
+	
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.modalHeader h2 {
+	color: #fff;
+	font-size: 26px;
+	margin: 20px 0;
+}
+
+.modalBody input {
+	width: 300px;
+	border: none;
+	box-shadow: none;
+
+	background-color: rgba(34,34,34, .5);
+	color: #fff;
+
+	text-align: center;
+	font-size: 26px;
+	font-family: 'Advent Pro', sans-serif;
+	padding: 10px;
+	margin: 10px 0 15px;
+}
+
+.modalBtns {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 15px;
+}
+
+.modalBtns button {
+	margin: 0 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: none;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.8);
+	padding: 5px 15px;
+	color: #222;
+	
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 18px;
+	cursor: pointer;
+
+	transition: background-color .5s ease-in;
+}
+
+.modalBtns button:nth-child(1) {
+	background-color: #E8754F;
+}
+
+.modalBtns button:nth-child(1):hover {
+	background-color: #FF7464;
+}
+
+.modalBtns button:nth-child(2) {
+	background-color: #6BFF7C;
+}
+
+.modalBtns button:nth-child(2):hover {
+	background-color: #74E856;
+}

@@ -1,3 +1,32 @@
 @charset "utf-8";
 
+.playlists {
+	text-align: center;
+	background-color: #383235;
+}
 
+
+.playlists h1 {
+	font-size: 45px;
+	color: #fff;
+}
+
+.playlistBtn {
+	margin: 0 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: none;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.8);
+	padding: 5px 15px;
+	color: #222;
+	
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 18px;
+	cursor: pointer;
+
+	transition: background-color .5s ease-in;
+}
+
+.playlistBtn:hover {
+	background-color: #6cff7e;
+}

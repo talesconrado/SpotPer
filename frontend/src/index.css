@@ -12,9 +12,10 @@ body {
 
 #root {
 	display: flex;
+	background-color: #383235;
 }
 
 .routes {
-	width: 80vw;
+	width: 70vw;
 	margin: 0 auto;
 }

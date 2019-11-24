@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+@keyframes rotateDisc {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.playlistItem {
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	background-color: #707070;
+
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+
+	padding: 10px;
+	position: relative;
+}
+
+.playlistItem a {
+
+	display: block;
+
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+
+.playlistItem img {
+	width: 100px;
+	height: 100px;
+
+	margin: 0 auto;
+
+	transform-origin: center center;
+}
+
+.playlistItem img:hover {
+	animation: rotateDisc .6s ease-in forwards;
+}
+
+.playlistItem a h2 {
+	margin: 0;
+}
+
+.playlistDel {
+	position: absolute;
+	right: 5px;
+	top: 15px;
+	z-index: 2;
+
+	cursor: pointer;
+}
+
+.playlistDel section {
+	width: 20px;
+	height: 3px;
+
+	border: none;
+	background-color: #E8754F;
+
+	transform: rotate(45deg);
+}
+
+.playlistDel section::after {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 3px;
+	transform: rotate(90deg);
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	background-color: #E8754F;
+}
