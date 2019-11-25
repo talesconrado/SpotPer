@@ -1,8 +1,8 @@
 .albumList{
 	text-align: center;
 	background-color: #383235;
-	height:100vm;
-	overflow: scroll;
+	width:100%;
+	overflow:scroll;
 }
 
 .albumList h1 {

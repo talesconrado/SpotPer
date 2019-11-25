@@ -1,36 +1,56 @@
 import React, { Component } from 'react';
+import {useParams} from 'react-router-dom';
 
-import MusicList from '../components/Musics/MusicList.js';
 import Loading from '../components/Loading.js';
 
-class Album extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = { 
-			album: {},
-			musics: [],
-			loading: true
-		}
+class Album extends Component{
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            tracks: [],
+            loading: true
+        }
     }
-    wait = (miliseconds = 2000) => {
+
+    componentDidMount() {
+		this.fetchTracks()
+			.then(tracks => {
+				return this.wait(1000).then(() => tracks);
+			})
+			.then(tracks => {
+				this.setState({ tracks, loading: false });
+			})
+			.catch(err => console.log(err));
+    }
+    
+    wait = (milisecond) => {
 		return new Promise(resolve => {
-			setTimeout(resolve, miliseconds);
+			setTimeout(resolve, milisecond);
 		});
     }
-    fetchAlbum = () => {
-		const { albumId } = this.props.match.params;
-
-		return fetch(`/musics/${albumId}`)
+    
+    fetchTracks = async () => {
+        let { id } = useParams();
+		return fetch(`/music/${id}`)
 			.then(res => res.json())
-			.then(album => {
-				const { descricao, numfaixa } = playlist;
-				
-				this.setState({
-					playlist: { codplaylist, nome, dtnascimento },
-					musics
-				});
-			})
 			.catch(err => err);
+    }
+    
+    render() {
+		const { musics } = this.state;
+
+		const musicComponent = (
+			<div className={styles.albumList}>
+				<h1>Albuns</h1>
+				<MusicCollection list={musics}/>
+			</div>
+		);
+
+		const loadingComponent = <Loading />
+		return (this.state.loading) ? loadingComponent : musicComponent;
 	}
-}
+
+};
+
+export default AlbumList;

@@ -14,9 +14,9 @@ class AlbumCollection extends Component {
 		const items = this.props.list;
 
 		return (
-			<ul className={styles.albumCollection}>
+			<div className={styles.albumCollection}>
 				{this.createItems(items)}
-			</ul>
+			</div>
 		);
 	}
 }
