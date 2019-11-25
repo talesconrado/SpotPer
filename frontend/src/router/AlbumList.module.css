@@ -1,0 +1,11 @@
+.albumList{
+	text-align: center;
+	background-color: #383235;
+	height:100vm;
+	overflow: scroll;
+}
+
+.albumList h1 {
+	font-size: 45px;
+	color: #fff;
+}

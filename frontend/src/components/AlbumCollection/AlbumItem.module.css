@@ -1,0 +1,23 @@
+.albumItem{
+    list-style: none;
+    width: 30%;
+    height: 40%;
+    margin: 5px;
+    padding:0;
+	background-color: #222222;;
+    border: 6px #00a415 solid;
+}
+
+.albumItem a {
+    margin:0;
+    font-size: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+
+.albumItem img {
+	width: 90%;
+    margin: 15px;
+    padding:0;
+}

@@ -11,6 +11,7 @@ import {
 import SideBar from './components/SideBar.js';
 import Playlists from './router/Playlists.js';
 import PlaylistMusics from './router/PlaylistMusics.js';
+import AlbumList from './router/AlbumList';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
 				</Route>
 
 				<Route path="/album">
+					<AlbumList />
 				</Route>
 			</Switch>
 		</Router>
