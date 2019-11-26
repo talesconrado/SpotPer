@@ -1,3 +1,5 @@
+USE spotper
+
 DROP VIEW IF EXISTS V1
 GO
 

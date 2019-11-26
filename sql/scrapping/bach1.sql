@@ -7,7 +7,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:1:38',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -17,7 +17,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:31',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -27,7 +27,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:51',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -37,7 +37,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:4:37',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -47,7 +47,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:49',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -57,7 +57,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:3:41',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -67,7 +67,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:4:33',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -77,7 +77,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:4:43',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -87,7 +87,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:11',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -97,7 +97,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:3:42',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -107,7 +107,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:1:20',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -117,7 +117,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:3:08',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -127,7 +127,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:01',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -137,7 +137,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:59',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -147,7 +147,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:2:45',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
@@ -157,7 +157,7 @@ INSERT INTO faixa VALUES(
 	'DDD',
 	'00:3:52',
 	5,
-	1
+	0
 )
 
 INSERT INTO faixa VALUES(
