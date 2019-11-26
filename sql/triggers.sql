@@ -12,6 +12,7 @@ IF EXISTS (
            HAVING COUNT(f.codalbum) > 64
           )
 BEGIN
+RAISERROR('Um álbum pode ter no máximo 64 faixas.',16,1)
 ROLLBACK TRANSACTION;
 RETURN 
 END;
@@ -27,6 +28,7 @@ IF EXISTS (
                                     AND (f.tipogravacao NOT IN ('ADD')))
           )
 BEGIN
+RAISERROR('O preço de compra máximo foi ultrapassado.',16,1)
 ROLLBACK TRANSACTION;
 RETURN 
 END;
@@ -43,6 +45,7 @@ IF EXISTS (
            AND p.codperiodomusical = 0
           )
 BEGIN
+RAISERROR('A restrição de faixas do período barroco foi quebrada.',16,1)
 ROLLBACK TRANSACTION;
 RETURN 
 END;
