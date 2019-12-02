@@ -29,16 +29,17 @@ router.get('/:playlistId', (req, res, next) => {
 	const { playlistId } = req.params;
 	
 	poolConnection
-		.then(() => playlist.getPlaylistMusics(playlistId))
-		.then(musics => {
-			const data = musics.recordset;
-
-			if (!data) {
-				res.status(404).json({ status: 404, msg: `There is not music for playlist with id ${playlistId}` })
+		.then(() => playlist.getPlaylistById(playlistId))
+		.then(data => data.recordset[0])
+		.then(playlistData => playlist.getPlaylistWithMusics(playlistData))
+		.then(result => {
+			if (!result) {
+				res.status(404).json({ status: 404, msg: `There is no musics or playlist` });
 			} else {
-				res.status(200).json(data);
+				res.status(200).json(result);
 			}
 		})
+		.catch(err => next(err));
 });
 
 router.get('/add-playlist/:playlistName', (req, res, next) => {

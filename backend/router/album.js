@@ -137,7 +137,6 @@ router.get('/price',
 			res.status(400).json({ status: 400, msg: 'You need pass biggerThan or lessThan or both less and bigger' });
 		}
 	}
-
 );
 
 router.use((err, req, res, next) => {
