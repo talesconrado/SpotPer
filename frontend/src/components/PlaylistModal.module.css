@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+.playlistModal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 200;
+
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	
+	background-color: rgba(0,0,0, .8);
+
+}
+
+.playlistModalContent {
+	width: 300px;
+	height: 300px;
+
+	background-color: #383235;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.playlistModalContent h2 {
+	margin: 5px 0;
+}
+
+.playlistModalContent ul {
+	width: 100%;
+	padding: 0 20px;
+	list-style: none;
+}
+
+.playlistModalContent ul li {
+	background-color: #202020;
+	margin: 10px 10px;
+	padding: 5px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+
+	text-align: center;
+	transition: background-color 1s linear;
+}
+
+.playlistModalContent ul li:hover {
+	background-color: #707070;
+}
+
+.playlistModalContent button {
+	margin: 0 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: none;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.8);
+	padding: 5px 15px;
+	color: #222;
+	
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 18px;
+	cursor: pointer;
+
+	transition: background-color .5s ease-in;
+	background-color: #E8754F;
+}
+
+.playlistModalContent button:hover {
+	background-color: #FF7464;
+}
+
