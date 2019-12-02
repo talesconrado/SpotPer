@@ -1,6 +1,9 @@
 USE spotper
 GO
 --Function that receives as a parameter the name of a compositor and returns a table with his/hers album's
+DROP FUNCTION IF EXISTS lista_de_albuns
+GO
+
 CREATE FUNCTION lista_de_albuns (
     @nome_compositor VARCHAR(200)
 )
@@ -16,8 +19,10 @@ RETURN
         faixa f,
         compositor c
     WHERE
-        c.nome = @nome_compositor AND
+        c.nome LIKE '%' + @nome_compositor + '%' AND
         c.codcompositor = cp.codcompositor AND
         cp.codfaixacompositor = f.codfaixa AND
         f.codalbum = a.codalbum
 GO
+
+SELECT * from lista_de_albuns('Dvo')
