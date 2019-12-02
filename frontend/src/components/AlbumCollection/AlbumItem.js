@@ -10,7 +10,7 @@ class AlbumItem extends Component {
 		return (
 			<li className={styles.albumItem}>
 				
-				<Link to={`album/id/${this.props.elem.codalbum}`}>
+				<Link to={`album/${this.props.elem.codalbum}`}>
 					<img src={coverList[this.props.elem.codalbum]} alt="CoverArt" />
 					<h2>{this.props.elem.descricao}</h2>
 				</Link>

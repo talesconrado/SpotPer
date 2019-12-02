@@ -1,7 +1,7 @@
 .albumCollection{
     display: inline-flex;
     flex-wrap: wrap;
-    padding: 0;
+    padding: 20px 0;
     margin:0;
     list-style: none;
     width:70%;

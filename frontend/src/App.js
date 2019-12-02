@@ -12,6 +12,7 @@ import SideBar from './components/SideBar.js';
 import Playlists from './router/Playlists.js';
 import PlaylistMusics from './router/PlaylistMusics.js';
 import AlbumList from './router/AlbumList';
+import AlbumMusics from './router/AlbumMusics.js';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
 					<Playlists />
 				</Route>
 
-				<Route path="/album/:albumId">
+				<Route path="/album/:albumId" component={AlbumMusics}>
 				</Route>
 
 				<Route path="/album">

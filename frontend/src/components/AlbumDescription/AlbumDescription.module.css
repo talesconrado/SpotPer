@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.albumDescription {
+	display: flex;
+	padding: 20px 0;
+	border-bottom: 1px solid #707070;
+}
+
+.albumDescImg {
+	width: 200px;
+	height: 200px;
+
+	background-color: #707070;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}	
+
+.albumDescImg img {
+	width: 180px;
+	height: 180px;
+}
+
+.albumDescContent {
+	margin: 0 20px;
+
+	position: relative;
+}
+
+.albumDescContent h2 {
+	font-size: 35px;
+	color: #fff;
+	letter-spacing: 1px;
+	margin: 15px 0;
+}
+
+.albumDescContent p {
+	margin: 0;
+	color: #fff;
+}
+
+.albumDescContent p:nth-child(3) {
+	position: absolute;
+
+	bottom: 10px;
+}
