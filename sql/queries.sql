@@ -40,8 +40,9 @@ HAVING COUNT(f.codfaixa) = (SELECT MAX(A.CNT)
 
 
 --Listar playlists, cujas faixas (todas) têm tipo de composição “Concerto” e período “Barroco”.
-SELECT p.nome as 'Nome' 
-FROM playlist p
-WHERE p.codplaylist = ALL ( SELECT p1.codplaylist FROM playlist p1,faixasNaPlaylist fp, compositor c, compostaPor cp, faixa f 
-WHERE p1.codplaylist = fp.codplaylist AND fp.codfaixaplaylist = f.codfaixa AND f.codtipocomposicao = 0
-AND cp.codfaixacompositor = f.codfaixa AND cp.codcompositor = c.codcompositor AND c.codperiodomusical = 0)
+select p.nome as 'nome'
+from playlist p inner join faixasNaPlaylist fp inner join faixa f on f.codfaixa = fp.codfaixaplaylist on p.codplaylist = fp.codplaylist
+where not exists (select f1.codfaixa from faixa f1, faixasNaPlaylist fp1, compositor c, compostaPor cp where f1.codtipocomposicao != 0 and fp1.codplaylist = p.codplaylist
+                and fp1.codfaixaplaylist = f1.codfaixa and f1.codtipocomposicao != 0 and cp.codcompositor = c.codcompositor
+                and cp.codfaixacompositor = f1.codfaixa and c.codperiodomusical != 0)
+group by p.nome

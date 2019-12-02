@@ -42,18 +42,18 @@ INSERT INTO faixasNaPlaylist VALUES( 2,146,0, NULL )
 
 
 INSERT INTO playlist(nome, dtnascimento) VALUES (
-    'Playlist 3',
+    'Playlist 9',
     '2019-11-21'
 )
 
 
-INSERT INTO faixasNaPlaylist VALUES( 3,99,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,100,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,101,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,102,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,103,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,104,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,105,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,106,0, NULL )
-INSERT INTO faixasNaPlaylist VALUES( 3,107,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,99,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,100,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,101,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,102,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,103,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,104,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,105,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,106,0, NULL )
+INSERT INTO faixasNaPlaylist VALUES( 1010,107,0, NULL )
 
