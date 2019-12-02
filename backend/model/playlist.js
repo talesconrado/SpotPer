@@ -19,32 +19,23 @@ class Playlist {
 		return result;
 	}
 
-	getPlaylistWithMusics(playlists) {
-		const data = playlists.recordset;
+	getPlaylistWithMusics(playlist) {
+		const id = playlist.codplaylist;
 
-		const promises = data.map(elem => this.getPlaylistMusics(elem.codplaylist));
-
-		return Promise.all(promises)
-			.then(res => res.map(elem => elem.recordset))
-			.then(musics => {
-				return data.map((elem, ind) => {
-					const copy = Object.assign({}, elem, { musics: [...musics[ind]] })
-
-					return copy
-				});
-
-			})
+		return this.getPlaylistMusics(id)
+			.then(data => data.recordset)
+			.then(musics => Object.assign({}, playlist, { musics }))
 			.catch(err => err);
 	}
 
 	getPlaylistById(playlistId) {
-		const result = this.request.query(`SELECT * WHERE codplaylist = ${playlistId}`);
+		const result = this.request.query(`SELECT * FROM playlist  WHERE codplaylist = ${playlistId}`);
 
 		return result;
 	}
 
 	getPlaylistMusics(playlistId) {
-			const result = this.request.query(`SELECT f.codfaixa, f.descricao AS 'musica', f.tipogravacao, f.tempo, f.codalbum, c.codcompositor, c.nome AS 'compositor', tc.descricao AS 'periodoMusical' FROM playlist pl, faixasNaPlaylist fnp, faixa f, compostaPor cp, compositor c, tipoComposicao tc WHERE pl.codplaylist = fnp.codplaylist AND fnp.codfaixaplaylist = f.codfaixa AND f.codfaixa = cp.codfaixacompositor AND cp.codcompositor = c.codcompositor AND f.codtipocomposicao = tc.cod AND pl.codplaylist = '${playlistId}'`)
+			const result = this.request.query(`SELECT f.codfaixa, f.descricao AS 'musica', f.tipogravacao, f.tempo, f.codalbum, c.codcompositor, c.nome AS 'compositor', tc.descricao AS 'periodoMusical' FROM playlist pl, faixasNaPlaylist fnp, faixa f, compostaPor cp, compositor c, tipoComposicao tc WHERE pl.codplaylist = fnp.codplaylist AND fnp.codfaixaplaylist = f.codfaixa AND f.codfaixa = cp.codfaixacompositor AND cp.codcompositor = c.codcompositor AND f.codtipocomposicao = tc.cod AND pl.codplaylist = ${playlistId}`)
 
 			return result;
 	}

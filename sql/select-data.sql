@@ -68,6 +68,7 @@ INSERT INTO playlist(nome, dtnascimento) VALUES('random 3', CURRENT_TIMESTAMP);
 SELECT * FROM playlist;
 SELECT * FROM faixasNaPlaylist WHERE codplaylist = '60933cc2-132c-4fa6-8efb-b07e9fdd7985';
 
+DELETE FROM playlist WHERE codplaylist = 4
 
 SELECT * FROM faixa
 
