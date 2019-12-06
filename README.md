@@ -1,6 +1,16 @@
 # SpotPer
 Trabalho final da disciplina de Fundamentos de Bancos de Dados, na UFC. Um "Spotify" personalizado, usando Node, React e SQL Server.
 
+## Screenshots:
+<p align="middle" float="left">
+    <img width="320" src="./screenshots/spotper-album.png">
+    <img width="320" src="./screenshots/spotper-album2.png">
+    <img width="320" src="./screenshots/spotper-album3.png">
+    <img width="320" src="./screenshots/spotper-playlist1.png">
+    <img width="320" src="./screenshots/spotper-playlist2.png">
+    <img width="320" src="./screenshots/spotper-playlist3.png">
+</p>
+
 ## Contributing
 
 [Saiba como contribuir](./CONTRIBUTING.md)
